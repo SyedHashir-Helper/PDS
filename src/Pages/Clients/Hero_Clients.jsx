@@ -25,10 +25,11 @@ const Hero_Clients = () => {
           </Col>
           <Col md={24}>
             <p className="wwr-second-text">
-              We are a team of friends and coworkers. We have a tremendous
-              amount of credentialing expertise and experience, and we provide
-              outstanding service to clients. Members of our team have worked
-              together for decades.
+              We are a team of friends, coworkers and technology professionals
+              who have a tremendous amount of credentialing expertise and
+              experience, and we provide outstanding service to clients. Members
+              of our team have worked together for decades in medical
+              credentialing.
             </p>
           </Col>
         </Row>

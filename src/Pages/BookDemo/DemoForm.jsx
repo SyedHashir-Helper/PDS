@@ -1,58 +1,91 @@
 import React, { useState } from "react";
 import { useForm, Controller } from "react-hook-form";
-import { BiCalendarCheck } from 'react-icons/bi';
-import { Input, Row, Col, Form, Button, message, Spin, Alert, Divider} from "antd";
+import { BiCalendarCheck } from "react-icons/bi";
+import {
+  Input,
+  Row,
+  Col,
+  Form,
+  Button,
+  message,
+  Spin,
+  Alert,
+  Divider,
+} from "antd";
+import { FiSend } from "react-icons/fi";
+import {
+  FaUser,
+  FaBriefcase,
+  FaPhone,
+  FaMobileAlt,
+  FaEnvelope,
+  FaBuilding,
+  FaGlobe,
+  FaComments,
+} from "react-icons/fa"; // Importing icons
+
+const iconStyle = {
+  border: "1px solid #ccc", // Border color
+  borderRadius: "5px", // Rounded corners
+  padding: "8px", // Padding around the icon
+  display: "flex", // Flexbox for centering
+  marginRight: "8px", // Space between the icon and input
+};
+
 const DemoForm = () => {
-    const [messageApi, contextHolder] = message.useMessage();
-    const {
-      register,
-      handleSubmit,
-      watch,
-      control,
-      formState: { errors },
-      reset,
-      trigger,
-    } = useForm({
-      defaultValues: {
-        firstname: "",
-        lastname: "",
-        jobtitle: "",
-        officephone: "",
-        mobphone: "",
-        email: "",
-        company: "",
-        country: "",
-      },
+  const [messageApi, contextHolder] = message.useMessage();
+  const {
+    register,
+    handleSubmit,
+    watch,
+    control,
+    formState: { errors },
+    reset,
+    trigger,
+  } = useForm({
+    defaultValues: {
+      firstname: "",
+      lastname: "",
+      jobtitle: "",
+      officephone: "",
+      mobphone: "",
+      email: "",
+      company: "",
+      country: "",
+    },
+  });
+
+  const error = (errmsg) => {
+    messageApi.open({
+      type: "error",
+      content: errmsg,
     });
-  
-    const error = (errmsg) => {
-      messageApi.open({
-        type: "error",
-        content: errmsg,
-      });
-    };
-  
-    const success = (successmsg) => {
-      messageApi.open({
-        type: "success",
-        content: successmsg,
-        duration: 2,
-      });
-    };
-    const onSubmit = (data) => console.log(data);
+  };
+
+  const success = (successmsg) => {
+    messageApi.open({
+      type: "success",
+      content: successmsg,
+      duration: 2,
+    });
+  };
+  const onSubmit = (data) => success("Booked Successfully");
 
   return (
-    <Row justify={'center'} >
-
-        <Col md={16} className="contact-form">
-          <Row className="contact-title" justify={"center"} align={"middle"}>
-            And we will schdule your free demo
-          </Row>
-          <Divider />
-          <form onSubmit={handleSubmit(onSubmit)} >
-            <Row gutter={[10, 10]} justify={"center"}>
-              <Col span={11}>
-                <label>First Name</label>
+    <Row justify={"center"}>
+        {contextHolder}
+      <Col md={16} className="contact-form">
+        <Row className="contact-title" justify={"center"} align={"middle"}>
+          And we will schdule your free demo
+        </Row>
+        <Divider />
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <Row gutter={[10, 10]} justify={"center"}>
+            <Col span={11}>
+              <div style={{ display: "flex" }}>
+                <div style={iconStyle}>
+                  <FaUser />
+                </div>
                 <Controller
                   name="firstname"
                   rules={{
@@ -64,14 +97,18 @@ const DemoForm = () => {
                   }}
                   control={control}
                   render={({ field }) => (
-                    <Input {...field} placeholder="First Name" />
+                    <Input {...field} placeholder="First Name*" />
                   )}
                 />
+              </div>
+              <p className="error-msg">{errors.firstname?.message}</p>
+            </Col>
 
-                <p className="error-msg">{errors.firstname?.message}</p>
-              </Col>
-              <Col span={11}>
-                <label>Last Name</label>
+            <Col span={11}>
+              <div style={{ display: "flex", alignItems: "center" }}>
+                <div style={iconStyle}>
+                  <FaUser />
+                </div>
                 <Controller
                   name="lastname"
                   rules={{
@@ -83,14 +120,18 @@ const DemoForm = () => {
                   }}
                   control={control}
                   render={({ field }) => (
-                    <Input {...field} placeholder="Last Name" />
+                    <Input {...field} placeholder="Last Name*" />
                   )}
                 />
-                <p className="error-msg">{errors.lastname?.message}</p>
-              </Col>
+              </div>
+              <p className="error-msg">{errors.lastname?.message}</p>
+            </Col>
 
-              <Col span={11}>
-                <label>Job Title</label>
+            <Col span={11}>
+              <div style={{ display: "flex", alignItems: "center" }}>
+                <div style={iconStyle}>
+                  <FaBriefcase />
+                </div>
                 <Controller
                   name="jobtitle"
                   rules={{
@@ -102,14 +143,18 @@ const DemoForm = () => {
                   }}
                   control={control}
                   render={({ field }) => (
-                    <Input {...field} placeholder="Job Title" />
+                    <Input {...field} placeholder="Job Title*" />
                   )}
                 />
+              </div>
+              <p className="error-msg">{errors.jobtitle?.message}</p>
+            </Col>
 
-                <p className="error-msg">{errors.jobtitle?.message}</p>
-              </Col>
-              <Col span={11}>
-                <label>Office Phone</label>
+            <Col span={11}>
+              <div style={{ display: "flex", alignItems: "center" }}>
+                <div style={iconStyle}>
+                  <FaPhone />
+                </div>
                 <Controller
                   name="officephone"
                   rules={{
@@ -121,14 +166,18 @@ const DemoForm = () => {
                   }}
                   control={control}
                   render={({ field }) => (
-                    <Input {...field} placeholder="Office Phone" />
+                    <Input {...field} placeholder="Office Phone*" />
                   )}
                 />
-                <p className="error-msg">{errors.officephone?.message}</p>
-              </Col>
+              </div>
+              <p className="error-msg">{errors.officephone?.message}</p>
+            </Col>
 
-              <Col span={11}>
-                <label>Mobile Phone</label>
+            <Col span={11}>
+              <div style={{ display: "flex", alignItems: "center" }}>
+                <div style={iconStyle}>
+                  <FaMobileAlt />
+                </div>
                 <Controller
                   name="mobilephone"
                   rules={{
@@ -140,14 +189,18 @@ const DemoForm = () => {
                   }}
                   control={control}
                   render={({ field }) => (
-                    <Input {...field} placeholder="Mobile Phone" />
+                    <Input {...field} placeholder="Mobile Phone*" />
                   )}
                 />
+              </div>
+              <p className="error-msg">{errors.mobilephone?.message}</p>
+            </Col>
 
-                <p className="error-msg">{errors.mobilephone?.message}</p>
-              </Col>
-              <Col span={11}>
-                <label>Email</label>
+            <Col span={11}>
+              <div style={{ display: "flex", alignItems: "center" }}>
+                <div style={iconStyle}>
+                  <FaEnvelope />
+                </div>
                 <Controller
                   name="email"
                   rules={{
@@ -159,14 +212,18 @@ const DemoForm = () => {
                   }}
                   control={control}
                   render={({ field }) => (
-                    <Input {...field} placeholder="Email" />
+                    <Input {...field} placeholder="Email*" />
                   )}
                 />
-                <p className="error-msg">{errors.email?.message}</p>
-              </Col>
+              </div>
+              <p className="error-msg">{errors.email?.message}</p>
+            </Col>
 
-              <Col span={11}>
-                <label>Company</label>
+            <Col span={11}>
+              <div style={{ display: "flex", alignItems: "center" }}>
+                <div style={iconStyle}>
+                  <FaBuilding />
+                </div>
                 <Controller
                   name="company"
                   rules={{
@@ -178,42 +235,40 @@ const DemoForm = () => {
                   }}
                   control={control}
                   render={({ field }) => (
-                    <Input {...field} placeholder="Company" />
+                    <Input {...field} placeholder="Company*" />
                   )}
                 />
-                <p className="error-msg">{errors.company?.message}</p>
-              </Col>
-              <Col span={11}>
-                <label>Country</label>
+              </div>
+              <p className="error-msg">{errors.company?.message}</p>
+            </Col>
+
+            <Col span={11}>
+              <div style={{ display: "flex", alignItems: "center" }}>
+                <div style={iconStyle}>
+                  <FaGlobe />
+                </div>
                 <Controller
                   name="country"
-                  rules={{
-                    required: "It is mandatory",
-                    minLength: {
-                      value: 4,
-                      message: "Minimum length is 4 characters",
-                    },
-                  }}
                   control={control}
                   render={({ field }) => (
                     <Input {...field} placeholder="Country" />
                   )}
                 />
-                <p className="error-msg">{errors.country?.message}</p>
-              </Col>
-            </Row>
-            <Row justify={"end"} align={"middle"}>
+              </div>
+              <p className="error-msg">{errors.country?.message}</p>
+            </Col>
+          </Row>
+          <Row justify={"end"} align={"middle"}>
+            <Col pull={1}>
+              <button type="submit" className="contact-button">
+                <BiCalendarCheck size={20} /> Book a demo
+              </button>
+            </Col>
+          </Row>
+        </form>
+      </Col>
+    </Row>
+  );
+};
 
-              <Col pull={1}>
-                <button type="submit" className="contact-button">
-                  <BiCalendarCheck size={20}/> Book
-                </button>
-              </Col>
-            </Row>
-          </form>
-        </Col>
-      </Row>
-  )
-}
-
-export default DemoForm
+export default DemoForm;

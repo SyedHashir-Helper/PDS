@@ -1,95 +1,130 @@
-import React from 'react'
-import { Card, List, Row } from 'antd';
+import React from "react";
+import { Card, List, Row } from "antd";
 import ForvisMazaars from "../../assets/images/clients/ForvisMazars.png";
-import ForvisMazars from '../../assets/images/clients/ForvisMazars.png';
-import OlofssonGroup from '../../assets/images/clients/Olofsson-Group.png';
-import UniversalAmerican from '../../assets/images/clients/UAM_Wellcare_logo.png';
-import Sentara from '../../assets/images/clients/sentara.png';
-import TexasTrueChoice from '../../assets/images/clients/ttc.png';
-import ChooseWellCommunities from '../../assets/images/clients/choosewell+-+full+color+web.png';
-import KaiserPermanente from '../../assets/images/clients/kaiser-permanente-logo-png-transparent.png';
-import LongevityHealthPlan from '../../assets/images/clients/63c7fe1f7c4ed17f03366b86_Longevity.png';
-import MolinaHealthCare from '../../assets/images/clients/molina.png';
-import EVRYHealth from '../../assets/images/clients/104684.png';
-import PACEHealthcare from '../../assets/images/clients/Logo-blue.png';
-import TheViabilityCompany from '../../assets/images/clients/60225ViabilityCompany_600x600.png';
+import ForvisMazars from "../../assets/images/clients/ForvisMazars.png";
+import OlofssonGroup from "../../assets/images/clients/Olofsson-Group.png";
+import UniversalAmerican from "../../assets/images/clients/UAM_Wellcare_logo.png";
+import Sentara from "../../assets/images/clients/sentara.png";
+import TexasTrueChoice from "../../assets/images/clients/ttc.png";
+import ChooseWellCommunities from "../../assets/images/clients/choosewell+-+full+color+web.png";
+import KaiserPermanente from "../../assets/images/clients/kaiser-permanente-logo-png-transparent.png";
+import LongevityHealthPlan from "../../assets/images/clients/63c7fe1f7c4ed17f03366b86_Longevity.png";
+import MolinaHealthCare from "../../assets/images/clients/molina.png";
+import EVRYHealth from "../../assets/images/clients/104684.png";
+import PACEHealthcare from "../../assets/images/clients/Logo-blue.png";
+import TheViabilityCompany from "../../assets/images/clients/60225ViabilityCompany_600x600.png";
+import {Link} from 'react-router-dom'
 
-const {Meta} = Card;
-
+const { Meta } = Card;
 
 const data = [
     {
-        "name": "Forvis Mazars",
-        "image": ForvisMazars
+      name: "Forvis Mazars",
+      image: ForvisMazars,
+      url: "https://www.forvis.com", // Example URL
     },
     {
-        "name": "The Olofson Group",
-        "image": OlofssonGroup
+      name: "The Olofson Group",
+      image: OlofssonGroup,
+      url: "https://www.theolofsongroup.com", // Example URL
     },
     {
-        "name": "Universal American",
-        "image": UniversalAmerican
+      name: "Universal American",
+      image: UniversalAmerican,
+      url: "https://www.universalamerican.com", // Example URL
     },
     {
-        "name": "Sentara",
-        "image": Sentara
+      name: "Sentara",
+      image: Sentara,
+      url: "https://www.sentara.com", // Example URL
     },
     {
-        "name": "Texas True Choice",
-        "image": TexasTrueChoice
+      name: "Texas True Choice",
+      image: TexasTrueChoice,
+      url: "https://www.texastruechoice.com", // Example URL
     },
     {
-        "name": "ChooseWell Communities",
-        "image": ChooseWellCommunities
+      name: "ChooseWell Communities",
+      image: ChooseWellCommunities,
+      url: "https://www.choosewellcommunities.com", // Example URL
     },
     {
-        "name": "Kaiser Permanente",
-        "image": KaiserPermanente
+      name: "Kaiser Permanente",
+      image: KaiserPermanente,
+      url: "https://www.kaiserpermanente.org", // Example URL
     },
     {
-        "name": "Longevity Health Plan",
-        "image": LongevityHealthPlan
+      name: "Longevity Health Plan",
+      image: LongevityHealthPlan,
+      url: "https://www.longevityhealthplan.com", // Example URL
     },
     {
-        "name": "Molina HealthCare",
-        "image": MolinaHealthCare
+      name: "Molina HealthCare",
+      image: MolinaHealthCare,
+      url: "https://www.molinahealthcare.com", // Example URL
     },
     {
-        "name": "EVRY Health",
-        "image": EVRYHealth
+      name: "EVRY Health",
+      image: EVRYHealth,
+      url: "https://www.evryhealth.com", // Example URL
     },
     {
-        "name": "PACE Healthcare",
-        "image": PACEHealthcare
+      name: "PACE Healthcare",
+      image: PACEHealthcare,
+      url: "https://www.pacehealthcare.com", // Example URL
     },
     {
-        "name": "The Viability Company",
-        "image": TheViabilityCompany
-    }
-];
-
+      name: "The Viability Company",
+      image: TheViabilityCompany,
+      url: "https://www.theviabilitycompany.com", // Example URL
+    },
+  ];
+  
 
 const ClientList = () => {
   return (
-    <Row>
-        <List style={{width: "99%"}}
-            grid={{
-                gutter: 16,
-                column: 4,
+    <Row justify={"center"}>
+      <List
+        style={{ width: "99%" }}
+        grid={{
+          gutter: 16,
+          column: 4,
+        }}
+        dataSource={data}
+        renderItem={(item) => (
+          <List.Item style={{ height: "250px" }}>
+            <Link to={item.url}>
+            <Card
+              hoverable
+              style={{
+                  height: "100%",
+                overflow: "hidden",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                position: 'relative',
             }}
-            dataSource={data}
-            renderItem={(item) => (
-            <List.Item style={{height: "250px"}}>
-                <Card hoverable title={item.name} style={{ height: "100%", overflow: "hidden", display: "flex", flexDirection: "column", justifyContent: "flex-start", objectFit: "cover"}}>
-                        <img width={300} style={{
-                            objectFit: "cover"
-                    }} src={item.image} />
-                </Card>
-            </List.Item>
-            )}
-        />
+            >
+              <img
+                width={300}
+                style={{
+                  height: "100%",
+                  width: "100%",
+                  objectFit: "cover",
+                  transition: 'transform 0.3s ease',
+                }}
+                src={item.image}
+                onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.1)'} // Scale up on focus
+                onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1.0)'} // Scale up on focus
+                tabIndex={0} // Make the image focusable
+              />
+            </Card>
+      </Link>
+          </List.Item>
+        )}
+      />
     </Row>
-  )
-}
+  );
+};
 
-export default ClientList
+export default ClientList;

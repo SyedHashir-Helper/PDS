@@ -1,10 +1,30 @@
 import React, { useState } from "react";
 import { useForm, Controller } from "react-hook-form";
-import { Input, Row, Col, Form, Button, message, Spin, Alert, Divider} from "antd";
-import "../../styles/Contact/Contact.css"
-import { FiSend } from 'react-icons/fi';
+import {
+  Input,
+  Row,
+  Col,
+  Form,
+  Button,
+  message,
+  Spin,
+  Alert,
+  Divider,
+} from "antd";
+import "../../styles/Contact/Contact.css";
+import { FiSend } from "react-icons/fi";
+import {
+  FaUser,
+  FaBriefcase,
+  FaPhone,
+  FaMobileAlt,
+  FaEnvelope,
+  FaBuilding,
+  FaGlobe,
+  FaComments,
+} from "react-icons/fa"; // Importing icons
 
-import contact from "../../assets/images/contact.png"
+import contact from "../../assets/images/contact.png";
 const { TextArea } = Input;
 
 const Contact = () => {
@@ -19,11 +39,25 @@ const Contact = () => {
     trigger,
   } = useForm({
     defaultValues: {
-      name: "",
+      firstname: "",
+      lastname: "",
+      jobtitle: "",
+      officephone: "",
+      mobphone: "",
       email: "",
+      company: "",
+      country: "",
       message: "",
     },
   });
+
+  const iconStyle = {
+    border: "1px solid #ccc", // Border color
+    borderRadius: "5px", // Rounded corners
+    padding: "8px", // Padding around the icon
+    display: "flex", // Flexbox for centering
+    marginRight: "8px", // Space between the icon and input
+  };
 
   const error = (errmsg) => {
     messageApi.open({
@@ -39,91 +73,231 @@ const Contact = () => {
       duration: 2,
     });
   };
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => success("Send Successfully");
   return (
     <section>
-      <Row justify={'center'} >
-        
-        <Col md={12} className="contact-image">
-            <img src={contact}  />
-        </Col>
+      <Row justify={"center"}>
+        {contextHolder}
         <Col md={10} className="contact-form">
           <Row className="contact-title" justify={"center"} align={"middle"}>
             How can we help you?
           </Row>
-          <Row className="contact-title" justify={'center'} align={'middle'}>
+          <Row className="contact-title" justify={"center"} align={"middle"}>
             <span>Please contact us online or by phone - 757-373-5050</span>
           </Row>
           <Divider />
-          <form onSubmit={handleSubmit(onSubmit)} >
+          <form onSubmit={handleSubmit(onSubmit)}>
             <Row gutter={[10, 10]} justify={"center"}>
               <Col span={11}>
-                <label>Name</label>
-                <Controller
-                  name="name"
-                  rules={{
-                    required: "It is mandatory",
-                    minLength: {
-                      value: 4,
-                      message: "Minimum length is 4 characters",
-                    },
-                  }}
-                  control={control}
-                  render={({ field }) => (
-                    <Input {...field} placeholder="Name" />
-                  )}
-                />
-
-                <p className="error-msg">{errors.name?.message}</p>
+                <div style={{ display: "flex" }}>
+                  <div style={iconStyle}>
+                    <FaUser />
+                  </div>
+                  <Controller
+                    name="firstname"
+                    rules={{
+                      required: "It is mandatory",
+                      minLength: {
+                        value: 4,
+                        message: "Minimum length is 4 characters",
+                      },
+                    }}
+                    control={control}
+                    render={({ field }) => (
+                      <Input {...field} placeholder="First Name*" />
+                    )}
+                  />
+                </div>
+                <p className="error-msg">{errors.firstname?.message}</p>
               </Col>
+
               <Col span={11}>
-                <label>Email</label>
-                <Controller
-                  name="email"
-                  rules={{
-                    required: "It is mandatory",
-                    minLength: {
-                      value: 4,
-                      message: "Minimum length is 4 characters",
-                    },
-                  }}
-                  control={control}
-                  render={({ field }) => (
-                    <Input {...field} placeholder="Email" />
-                  )}
-                />
+                <div style={{ display: "flex", alignItems: "center" }}>
+                  <div style={iconStyle}>
+                    <FaUser />
+                  </div>
+                  <Controller
+                    name="lastname"
+                    rules={{
+                      required: "It is mandatory",
+                      minLength: {
+                        value: 4,
+                        message: "Minimum length is 4 characters",
+                      },
+                    }}
+                    control={control}
+                    render={({ field }) => (
+                      <Input {...field} placeholder="Last Name*" />
+                    )}
+                  />
+                </div>
+                <p className="error-msg">{errors.lastname?.message}</p>
+              </Col>
+
+              <Col span={11}>
+                <div style={{ display: "flex", alignItems: "center" }}>
+                  <div style={iconStyle}>
+                    <FaBriefcase />
+                  </div>
+                  <Controller
+                    name="jobtitle"
+                    rules={{
+                      required: "It is mandatory",
+                      minLength: {
+                        value: 4,
+                        message: "Minimum length is 4 characters",
+                      },
+                    }}
+                    control={control}
+                    render={({ field }) => (
+                      <Input {...field} placeholder="Job Title*" />
+                    )}
+                  />
+                </div>
+                <p className="error-msg">{errors.jobtitle?.message}</p>
+              </Col>
+
+              <Col span={11}>
+                <div style={{ display: "flex", alignItems: "center" }}>
+                  <div style={iconStyle}>
+                    <FaPhone />
+                  </div>
+                  <Controller
+                    name="officephone"
+                    rules={{
+                      required: "It is mandatory",
+                      minLength: {
+                        value: 4,
+                        message: "Minimum length is 4 characters",
+                      },
+                    }}
+                    control={control}
+                    render={({ field }) => (
+                      <Input {...field} placeholder="Office Phone*" />
+                    )}
+                  />
+                </div>
+                <p className="error-msg">{errors.officephone?.message}</p>
+              </Col>
+
+              <Col span={11}>
+                <div style={{ display: "flex", alignItems: "center" }}>
+                  <div style={iconStyle}>
+                    <FaMobileAlt />
+                  </div>
+                  <Controller
+                    name="mobilephone"
+                    rules={{
+                      required: "It is mandatory",
+                      minLength: {
+                        value: 4,
+                        message: "Minimum length is 4 characters",
+                      },
+                    }}
+                    control={control}
+                    render={({ field }) => (
+                      <Input {...field} placeholder="Mobile Phone*" />
+                    )}
+                  />
+                </div>
+                <p className="error-msg">{errors.mobilephone?.message}</p>
+              </Col>
+
+              <Col span={11}>
+                <div style={{ display: "flex", alignItems: "center" }}>
+                  <div style={iconStyle}>
+                    <FaEnvelope />
+                  </div>
+                  <Controller
+                    name="email"
+                    rules={{
+                      required: "It is mandatory",
+                      minLength: {
+                        value: 4,
+                        message: "Minimum length is 4 characters",
+                      },
+                    }}
+                    control={control}
+                    render={({ field }) => (
+                      <Input {...field} placeholder="Email*" />
+                    )}
+                  />
+                </div>
                 <p className="error-msg">{errors.email?.message}</p>
               </Col>
+
+              <Col span={11}>
+                <div style={{ display: "flex", alignItems: "center" }}>
+                  <div style={iconStyle}>
+                    <FaBuilding />
+                  </div>
+                  <Controller
+                    name="company"
+                    rules={{
+                      required: "It is mandatory",
+                      minLength: {
+                        value: 4,
+                        message: "Minimum length is 4 characters",
+                      },
+                    }}
+                    control={control}
+                    render={({ field }) => (
+                      <Input {...field} placeholder="Company*" />
+                    )}
+                  />
+                </div>
+                <p className="error-msg">{errors.company?.message}</p>
+              </Col>
+
+              <Col span={11}>
+                <div style={{ display: "flex", alignItems: "center" }}>
+                  <div style={iconStyle}>
+                    <FaGlobe />
+                  </div>
+                  <Controller
+                    name="country"
+                    control={control}
+                    render={({ field }) => (
+                      <Input {...field} placeholder="Country" />
+                    )}
+                  />
+                </div>
+                <p className="error-msg">{errors.country?.message}</p>
+              </Col>
+
               <Col span={22}>
-                <label>Message</label>
-                <Controller
-                  name="message"
-                  rules={{
-                    required: "It is mandatory",
-                    minLength: {
-                      value: 4,
-                      message: "Minimum length is 4 characters",
-                    },
-                  }}
-                  control={control}
-                  render={({ field }) => (
-                    <TextArea
+                <div style={{ display: "flex", alignItems: "start" }}>
+                  <div style={iconStyle}>
+                    <FaComments />
+                  </div>
+                  <Controller
+                    name="message"
+                    rules={{
+                      required: "It is mandatory",
+                      minLength: {
+                        value: 4,
+                        message: "Minimum length is 4 characters",
+                      },
+                    }}
+                    control={control}
+                    render={({ field }) => (
+                      <TextArea
                         {...field}
                         showCount
                         maxLength={100}
-                        placeholder="Your Message"
-                        style={{ height: 120, resize: 'none' }}
-                        />
-                  )}
-                />
+                        placeholder="Your Message*"
+                        style={{ height: 120, resize: "none" }}
+                      />
+                    )}
+                  />
+                </div>
                 <p className="error-msg">{errors.message?.message}</p>
               </Col>
             </Row>
             <Row justify={"end"} align={"middle"}>
-
               <Col pull={1}>
                 <button type="submit" className="contact-button">
-                  <FiSend size={13}/> Send
+                  <FiSend size={13} /> Send
                 </button>
               </Col>
             </Row>

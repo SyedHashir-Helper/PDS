@@ -1,12 +1,25 @@
 import React from 'react'
 import {Row, Col} from 'antd'
 import HorizontalCard from '../../Components/HorizontalCard'
-import expertise from "../../assets/images/experts.png"
-import service from "../../assets/images/service.png"
-import Quality from "../../assets/images/quality.png"
-import Transparency from "../../assets/images/transparency.png"
-import files from "../../assets/images/files.png"
-import cost from "../../assets/images/cost.png"
+import expertise from "../../assets/images/advantages/expertise.png"
+import service from "../../assets/images/advantages/service.png"
+import Quality from "../../assets/images/advantages/quality.png"
+import Transparency from "../../assets/images/advantages/transparency.png"
+import files from "../../assets/images/advantages/folder.png"
+import cost from "../../assets/images/advantages/cost.png"
+
+
+import { LikeOutlined, MessageOutlined, StarOutlined } from '@ant-design/icons';
+import { Avatar, List, Space } from 'antd';
+
+const IconText = ({ icon, text }) => (
+  <Space>
+    {React.createElement(icon)}
+    {text}
+  </Space>
+);
+
+
 
 
 const Advantages = () => {
@@ -40,33 +53,32 @@ const Advantages = () => {
           "image": Quality
         },
         {
+            "header": "Current and Complete Files - Guaranteed",
+            "description": "PDS ensures files are complete before credentialing—guaranteed, or the client pays nothing. Unlike other CVOs, we don’t charge for incomplete work.",
+            "image": files,
+          },
+          {
+            "header": "Cost",
+            "description": "Our cost per clean file is an excellent value compared to competitors.",
+            "image": cost
+          },
+        {
           "header": "Transparency",
           "description": "Clients can check or expedite the credentialing status of any provider file at any time.",
           "image": Transparency
         },
-        {
-          "header": "Current and Complete Files - Guaranteed",
-          "description": "Unlike some CVOs, PDS does not require that clients submit files for credentialing that are current and complete. We will perform the work needed to ensure that the files are current and complete at the time of the credentialing decision. Guaranteed. Or the client does not pay. Other CVOs give clients two things they do not need: files the CVO failed to complete, and an invoice for the CVO’s failed efforts. ",
-          "image": files,
-        },
-        {
-          "header": "Cost",
-          "description": "Our cost per clean file is an excellent value compared to competitors.",
-          "image": cost
-        }
       ]
 
   return (
-    <Row>
+    <Row justify={'space-around'} align={'middle'} gutter={[0,10]} style={{margin: "0rem 1rem"}}>
         {
-            advantages.map((element, index)=>{
+            advantages.map((element,index)=>{
                 return (
-                    <Col md={23} key={index} >
-                        <HorizontalCard 
-                            header={element.header}
-                            desc={element.description}
+                    <Col md={11} key={index}>
+                        <HorizontalCard
                             image={element.image}
-                            reverse={index % 2 != 0}
+                            desc={element.description}
+                            header={element.header}
                         />
                     </Col>
                 )
