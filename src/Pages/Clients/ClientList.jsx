@@ -21,17 +21,17 @@ const data = [
     {
       name: "Forvis Mazars",
       image: ForvisMazars,
-      url: "https://www.forvis.com", // Example URL
+      url: "https://www.forvismazars.com/group/en", // Example URL
     },
     {
       name: "The Olofson Group",
       image: OlofssonGroup,
-      url: "https://www.theolofsongroup.com", // Example URL
+      url: "https://olofsson.group/ ", // Example URL
     },
     {
       name: "Universal American",
       image: UniversalAmerican,
-      url: "https://www.universalamerican.com", // Example URL
+      url: "https://www.uasdubai.ae/", // Example URL
     },
     {
       name: "Sentara",
@@ -41,12 +41,12 @@ const data = [
     {
       name: "Texas True Choice",
       image: TexasTrueChoice,
-      url: "https://www.texastruechoice.com", // Example URL
+      url: "https://www.truechoiceinsurance.com", // Example URL
     },
     {
       name: "ChooseWell Communities",
       image: ChooseWellCommunities,
-      url: "https://www.choosewellcommunities.com", // Example URL
+      url: "https://www.choose-well.org", // Example URL
     },
     {
       name: "Kaiser Permanente",
@@ -56,7 +56,7 @@ const data = [
     {
       name: "Longevity Health Plan",
       image: LongevityHealthPlan,
-      url: "https://www.longevityhealthplan.com", // Example URL
+      url: "https://longevityhealthplan.com", // Example URL
     },
     {
       name: "Molina HealthCare",
@@ -71,12 +71,12 @@ const data = [
     {
       name: "PACE Healthcare",
       image: PACEHealthcare,
-      url: "https://www.pacehealthcare.com", // Example URL
+      url: "https://www.pace-healthcare.com", // Example URL
     },
     {
       name: "The Viability Company",
       image: TheViabilityCompany,
-      url: "https://www.theviabilitycompany.com", // Example URL
+      url: "https://www.viabilitycompany.com", // Example URL
     },
   ];
   

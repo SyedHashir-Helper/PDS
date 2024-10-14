@@ -2,6 +2,7 @@ import React from 'react'
 import {Row, Col} from 'antd'
 import Navbar from '../../Components/Navbar'
 import Contact from './Contact'
+import Footer from '../../Components/Footer'
 
 const ContactUs = () => {
   return (
@@ -15,6 +16,7 @@ const ContactUs = () => {
                 </Col>
             </Row>
         <Contact/>
+        <Footer/>
     </section>
   )
 }

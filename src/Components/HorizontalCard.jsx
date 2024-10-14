@@ -19,9 +19,6 @@ const HorizontalCard = ({image, header, desc, reverse}) => {
                         observer.disconnect(); // Stop observing after it's visible
                     }
                 });
-            },
-            {
-                threshold: 0.5 // Trigger when 50% of the card is visible
             }
         );
 
@@ -44,10 +41,11 @@ const HorizontalCard = ({image, header, desc, reverse}) => {
             display: "flex",
             flexDirection: "row",
             overflow: "hidden",
-            transition: "transform 1s ease-in-out, box-shadow 0.5s ease-in-out",
+            transition: "transform 1s ease-in-out, box-shadow 1s ease-in-out",
             borderRadius: "15px",
             border: "1px solid rgb(223, 223, 223)",
-            transform: isFocused  ? "scale(1.02)" : "scale(1)",
+            transform: isVisible ? "translateX(0)" : "translateX(-100%) scale(1)",
+            boxShadow: isFocused ? "0 4px 20px rgba(0,0,0,0.2)" : "none"
         }}
             onMouseEnter={() => setIsFocused(true)}
             onMouseLeave={() => setIsFocused(false)}
@@ -55,7 +53,7 @@ const HorizontalCard = ({image, header, desc, reverse}) => {
             onBlur={() => setIsFocused(false)}
         >
         <Col className="card-content" md={18} lg={18} 
-            style={{display: "flex", alignItems: "start", flexDirection: "column",padding: "1rem", transform: isVisible  ? "translateX(0)" : "translateX(-100%)",
+            style={{display: "flex", alignItems: "start", flexDirection: "column",padding: "1rem",
                     transition: "transform 0.8s ease-in-out"}}>
             <Row className='card-header'>
                 <h1>
@@ -66,7 +64,7 @@ const HorizontalCard = ({image, header, desc, reverse}) => {
                 {desc}
             </Row>
         </Col>
-        <Col md={6} lg={6} className='card-img' style={{borderLeft: "1px solid rgb(223, 223, 223)", transition: "transform 0.8s ease-in-out"}}>
+        <Col md={6} lg={6} className='card-img' style={{borderLeft: "1px solid rgb(223, 223, 223)"}}>
             <img src={image} />
         </Col>
     </Row>

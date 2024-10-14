@@ -1,4 +1,8 @@
 :root {
+  --main-bg: linear-gradient(90deg, rgba(3,109,166,1) 0%, rgba(24,121,173,1) 23%, rgba(0,212,255,1) 100%);
+  --main-bg-2: linear-gradient(90deg, rgba(3,109,166,1) 0%, rgba(24,121,173,1) 23%, rgba(67,161,180,1) 100%);
+  --main-bg-3: linear-gradient(0deg, rgba(24,121,173,1) 0%, rgba(29,81,108,1) 100%);
+  --main-hero: linear-gradient(90deg, rgba(255,255,255,1) 60%, rgba(24,121,173,1) 100%, rgba(0,128,154,1) 100%);
   --main-theme: #1879ad;
   --primary-text-color: white;
   --borde-radius-5: 5px;

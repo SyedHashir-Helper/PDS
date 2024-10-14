@@ -49,8 +49,13 @@
 } */
 
 .navbar{
-    background-color: var(--main-theme);
+    background: var(--main-bg-3);
     color: white;
+    overflow: hidden;
+    position: sticky; /* Make the navbar sticky */
+    top: 0; /* Position it at the top */
+    z-index: 1000; /* Ensure it stays above other content */
+    padding: 0.5rem 0rem;
 }
 
 .nav-button Button{
