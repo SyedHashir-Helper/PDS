@@ -32,6 +32,7 @@ import contact from "../../assets/images/contact.png";
 const { TextArea } = Input;
 
 const Contact = () => {
+  const API_KEY = "";
   const [messageApi, contextHolder] = message.useMessage();
   const {
     register,
@@ -89,7 +90,7 @@ const Contact = () => {
       fetch('https://api.mailgun.net/v3/sandboxa06c5a5cc75043e18ee5c7d44b40a7f7.mailgun.org/messages', {
         method: 'POST',
         headers: {
-          'Authorization': 'Basic ' + btoa('api:c54ea06e8ad99ab62ae00c157462734e-d010bdaf-3280b13a'), // Basic auth with API key
+          'Authorization': 'Basic ' + btoa('API_KEY'), // Basic auth with API key
         },
         body: formData
       })
@@ -108,7 +109,7 @@ const Contact = () => {
       error("Didn't send email")
     }
   }
-  // c54ea06e8ad99ab62ae00c157462734e-d010bdaf-3280b13a
+
   return (
     <section>
       <Row justify={"center"}>
