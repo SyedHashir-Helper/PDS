@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 import { useForm, Controller } from "react-hook-form";
+import emailjs from '@emailjs/browser'
+import axios from 'axios'
+// const mailgun = require('mailgun-js')({ apiKey: 'c54ea06e8ad99ab62ae00c157462734e-d010bdaf-3280b13a', domain: 'sandboxa06c5a5cc75043e18ee5c7d44b40a7f7.mailgun.org' });
+
 import {
   Input,
   Row,
@@ -73,7 +77,38 @@ const Contact = () => {
       duration: 2,
     });
   };
-  const onSubmit = (data) => success("Send Successfully");
+  const onSubmit = async (dataT) => {
+   
+    console.log(dataT)
+    try {
+      const formData = new FormData();
+      formData.append('from', 'Syed Hashir 2021cs1@student.uet.edu.pk');
+      formData.append('to', dataT.email); // The recipient
+      formData.append('subject', "Mailing");
+      formData.append('text', "<h1>hi</h1>");
+      fetch('https://api.mailgun.net/v3/sandboxa06c5a5cc75043e18ee5c7d44b40a7f7.mailgun.org/messages', {
+        method: 'POST',
+        headers: {
+          'Authorization': 'Basic ' + btoa('api:c54ea06e8ad99ab62ae00c157462734e-d010bdaf-3280b13a'), // Basic auth with API key
+        },
+        body: formData
+      })
+        .then(response => response.json())
+        .then(data => {
+          if (data.message) {
+            alert('Email sent successfully!');
+          } else {
+            alert('Failed to send email.');
+          }
+          console.log(data);
+        })
+        .catch(error => console.error('Error:', error));
+    }
+    catch (err) {
+      error("Didn't send email")
+    }
+  }
+  // c54ea06e8ad99ab62ae00c157462734e-d010bdaf-3280b13a
   return (
     <section>
       <Row justify={"center"}>

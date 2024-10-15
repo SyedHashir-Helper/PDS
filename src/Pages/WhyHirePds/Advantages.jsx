@@ -57,15 +57,15 @@ const Advantages = () => {
             "description": "PDS ensures files are complete before credentialing—guaranteed, or the client pays nothing. Unlike other CVOs, we don’t charge for incomplete work.",
             "image": files,
           },
-          {
-            "header": "Cost",
-            "description": "Our cost per clean file is an excellent value compared to competitors.",
-            "image": cost
-          },
         {
           "header": "Transparency",
           "description": "Clients can check or expedite the credentialing status of any provider file at any time.",
           "image": Transparency
+        },
+        {
+          "header": "Cost",
+          "description": "Our cost per clean file is an excellent value compared to competitors.",
+          "image": cost
         },
       ]
 

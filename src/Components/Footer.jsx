@@ -21,6 +21,7 @@ const Footer = () => {
                         <li><Link  style={{color: "white"}}  to={"/whoweare"}>Who we are?</Link></li>
                         <li><Link  style={{color: "white"}}  to={"/clients"}>Clients we served</Link></li>
                         <li><Link  style={{color: "white"}}  to={"/contactus"}>Contact Us</Link></li>
+                        <li><Link  style={{color: "white"}}  to={"/bookdemo"}>Book a demo</Link></li>
                     </ul>
                 </Col>
                 

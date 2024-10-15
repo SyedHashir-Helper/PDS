@@ -80,20 +80,25 @@ const CardWithModal = ({ element }) => {
                 width: "100%",
                 height: "100%",
                 objectFit: "contain",
+                borderTopRightRadius: "20px"
               }}
             />
           </Col>
           <Col md={17} className="">
-            <Timeline
-              mode="left"
-              items={element.details.map((item) => ({
-                label: <span style={{ fontWeight: "bold" }}>{item.label}</span>,
-                children: (
-                  <div style={{ textAlign: "left" }}>{item.children}</div>
-                ),
-              }))}
-            />
-          </Col>
+          <div style={{ padding: "0px 20px", borderRadius: "8px", }}>
+  {element.details.map((item) => (
+    <div key={item.label} style={{ marginBottom: "20px", padding: "10px", backgroundColor: "#ffffff", borderRadius: "8px", boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)" }}>
+      <div style={{ fontWeight: "bold", fontSize: "1.5rem", color: "#333", marginBottom: "8px" }}>
+        {item.label}
+      </div>
+      <div style={{ textAlign: "justify", marginLeft: "15px", color: "#555" }}>
+        {item.children}
+      </div>
+    </div>
+  ))}
+</div>
+
+            </Col>
         </Row>
       </Modal>
     </>

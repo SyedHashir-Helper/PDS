@@ -1,7 +1,8 @@
 import React from "react";
 import { Row, Col, Button } from "antd";
 import "../../styles/Homepage/Hero.css";
-import hero from "../../assets/images/hero.png";
+import hero from "../../assets/PDS-ai.png";
+// import hero from "../../assets/images/hero.png";
 import { CheckOutlined } from '@ant-design/icons';
 import { FaCheck } from 'react-icons/fa';
 import { BiCalendarCheck } from 'react-icons/bi';
