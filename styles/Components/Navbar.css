@@ -1,0 +1,87 @@
+.nav-items ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+.nav-items ul li{
+    font-size: 1.6rem;
+    font-weight: bold;
+    font-family: sans-serif;
+    cursor: pointer;
+}
+.nav-logo{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 1rem;
+}
+.nav-logo span{
+    height: 4rem;
+    width: 4rem;
+    margin-left: 1rem;
+}
+
+.nav-items ul li a{
+  background-color: white;
+  background-size: 200% 100%;
+  background-position: -100%;
+  display: inline-block;
+  padding: 5px 0;
+  position: relative;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-items ul li a:before {
+    content: '';
+    background: white;
+    display: block;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    transition: all 0.3s ease-in-out;
+  }
+
+
+.nav-items ul li a:hover {
+    background-position: 0;
+}
+
+.nav-items ul li a:hover::before {
+    width:100%;
+  }
+
+/* .nav-items ul li:hover{
+    text-decoration: underline;
+} */
+
+.navbar{
+    background: var(--main-bg-3);
+    color: white;
+    overflow: hidden;
+    position: sticky; /* Make the navbar sticky */
+    top: 0; /* Position it at the top */
+    z-index: 1000; /* Ensure it stays above other content */
+    padding: 0.5rem 0rem;
+}
+
+.nav-button Button{
+    background-color: var(--primary-text-color);
+    border: none;
+    padding: 2rem 1rem;
+    border-radius: var(--borde-radius-5);
+    color: var(--main-theme);
+    font-size: 1.3rem;
+   
+
+}
+
+.nav-button Button Link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

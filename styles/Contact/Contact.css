@@ -1,0 +1,39 @@
+.contact-image img{
+    width: 75%;
+    object-fit: contain;
+    height: 100%;
+}
+
+.contact-image{
+    height: 70vh;
+    display: flex;
+    align-items: center;
+}
+.contact-title{
+    font-size: 1.8rem;
+    padding: 1rem 0rem;
+    font-weight: bold;
+}
+
+.error-msg{
+    color: red;
+}
+
+.contact-form{
+    border: 1px solid rgb(226, 226, 226);
+    padding: 2rem;
+    border-radius: var(--borde-radius-15);
+}
+.contact-button{
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background-color: var(--main-theme);
+    color: white;
+    border: none;
+    border-radius: var(--borde-radius-5);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
