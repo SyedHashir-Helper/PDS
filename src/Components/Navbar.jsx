@@ -8,8 +8,14 @@ import {Link} from 'react-router-dom';
 const Navbar = () => {
   return (
     <Row className='navbar' align={'middle'} justify={'space-around'}>
-        <Col className='nav-logo' md={6} lg={6}>
-            <h2>
+        <<Col className='nav-logo' md={9} lg={9}>
+            <span style={{}}>
+                <img src={logo} style={{
+                    height: "100%",
+                    objectFit: "contain"
+                }} />
+            </span>
+            <h2 style={{display: "inline"}}>
                 Provider Data Solutions
             </h2>
         </Col>
