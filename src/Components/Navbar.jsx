@@ -9,7 +9,7 @@ import logo from "../assets/PDS-ai.png"
 const Navbar = () => {
   return (
     <Row className='navbar' align={'middle'} justify={'space-around'}>
-        <<Col className='nav-logo' md={9} lg={9}>
+        <Col className='nav-logo' md={9} lg={9}>
             <span style={{}}>
                 <img src={logo} style={{
                     height: "100%",
