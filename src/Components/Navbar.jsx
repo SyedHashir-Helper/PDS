@@ -28,7 +28,7 @@ const Navbar = () => {
                 <li><Link to={"/contactus"}>Contact Us</Link></li>
             </ul>
         </Col>
-        <Col className='nav-button' md={4} lg={4} >
+        <Col className='nav-button' md={3} lg={3} >
             <Link to={'/bookdemo'}>
                 <Button>
                         Book a demo
