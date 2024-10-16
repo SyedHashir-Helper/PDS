@@ -5,6 +5,7 @@ import { BiCalendarCheck } from 'react-icons/bi';
 import { FaTicketAlt } from 'react-icons/fa';
 import {Link} from 'react-router-dom';
 import logo from "../assets/PDS-ai.png"
+// import logo from "../assets/header-logo.png"
 
 const Navbar = () => {
   return (

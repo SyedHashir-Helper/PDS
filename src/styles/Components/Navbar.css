@@ -10,6 +10,17 @@
     font-family: sans-serif;
     cursor: pointer;
 }
+.nav-logo{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 1rem;
+}
+.nav-logo span{
+    height: 6rem;
+    width: 6rem;
+    margin-left: 1rem;
+}
 
 .nav-items ul li a{
   background-color: white;
@@ -35,17 +46,6 @@
     transition: all 0.3s ease-in-out;
   }
 
-.nav-logo{
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    gap: 1rem;
-}
-.nav-logo span{
-    height: 4rem;
-    width: 4rem;
-    margin-left: 1rem;
-}
 
 .nav-items ul li a:hover {
     background-position: 0;

@@ -1,5 +1,5 @@
 .main-text{
-    font-size: 3.5rem;
+    font-size: 3rem;
 }
 .hero-img{
     height: 100%;
@@ -10,9 +10,9 @@
 }
 
 .hero-img img{
-    height: 85%;
-    width: 85%;
-    object-fit: cover;
+    /* height: 85%; */
+    width: 90%;
+    object-fit: contain;
 }
 
 .second-text{

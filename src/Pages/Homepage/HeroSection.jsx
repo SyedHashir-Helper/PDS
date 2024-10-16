@@ -1,7 +1,8 @@
 import React from "react";
 import { Row, Col, Button } from "antd";
 import "../../styles/Homepage/Hero.css";
-import hero from "../../assets/PDS-ai.png";
+// import hero from "../../assets/PDS-ai.png";
+import hero from "../../assets/1234.png";
 // import hero from "../../assets/images/hero.png";
 import { CheckOutlined } from '@ant-design/icons';
 import { FaCheck } from 'react-icons/fa';
@@ -20,7 +21,7 @@ const HeroSection = () => {
       }}
 
     >
-      <Col md={15} lg={15} className="hero-text">
+      <Col md={14} lg={14} className="hero-text">
         <Row>
           <Col md={24}>
             <h1 className="main-text">
@@ -72,7 +73,7 @@ const HeroSection = () => {
           </Col>
         </Row>
       </Col>
-      <Col md={9} lg={9} className="hero-img">
+      <Col md={10} lg={10} className="hero-img">
         <img src={hero} />
       </Col>
       
