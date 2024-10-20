@@ -4,13 +4,13 @@ import "../styles/Components/Navbar.css"
 import { BiCalendarCheck } from 'react-icons/bi';
 import { FaTicketAlt } from 'react-icons/fa';
 import {Link} from 'react-router-dom';
-import logo from "../assets/PDS-ai.png"
+import logo from "../assets/Pds-logo.png"
 // import logo from "../assets/header-logo.png"
 
 const Navbar = () => {
   return (
     <Row className='navbar' align={'middle'} justify={'space-around'}>
-        <Col className='nav-logo' md={9} lg={9}>
+        <Col className='nav-logo' md={20} lg={9} sm={18} xs={18}>
             <span style={{}}>
                 <img src={logo} style={{
                     height: "100%",
@@ -21,7 +21,7 @@ const Navbar = () => {
                 Provider Data Solutions
             </h2>
         </Col>
-        <Col className='nav-items' md={11} lg={11}>
+        <Col className='nav-items' md={0} lg={11} sm={0} xs={0}>
             <ul>
                 <li><Link to={"/"}>Why Hire PDS?</Link></li>
                 <li><Link to={"/whoweare"}>Who we are?</Link></li>
@@ -29,7 +29,7 @@ const Navbar = () => {
                 <li><Link to={"/contactus"}>Contact Us</Link></li>
             </ul>
         </Col>
-        <Col className='nav-button' md={3} lg={3} >
+        <Col className='nav-button' md={4} lg={4} sm={6} xs={6}>
             <Link to={'/bookdemo'}>
                 <Button>
                         Book a demo

@@ -21,7 +21,7 @@ const HeroSection = () => {
       }}
 
     >
-      <Col md={14} lg={14} className="hero-text">
+      <Col md={14} lg={14} sm={24} xs={24} className="hero-text">
         <Row>
           <Col md={24}>
             <h1 className="main-text">
@@ -73,7 +73,7 @@ const HeroSection = () => {
           </Col>
         </Row>
       </Col>
-      <Col md={10} lg={10} className="hero-img">
+      <Col md={10} lg={10} sm={24} xs={24} className="hero-img">
         <img src={hero} />
       </Col>
       

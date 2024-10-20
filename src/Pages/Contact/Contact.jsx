@@ -78,18 +78,41 @@ const Contact = () => {
     });
   };
   const onSubmit = async (dataT) => {
-   
+
     console.log(dataT)
     try {
       const formData = new FormData();
-      formData.append('from', 'Syed Hashir 2021cs1@student.uet.edu.pk');
+      formData.append('from', 'Syed Hashir syedhashir1001@gmail.com');
       formData.append('to', dataT.email); // The recipient
-      formData.append('subject', "Mailing");
-      formData.append('text', "<h1>hi</h1>");
-      fetch('https://api.mailgun.net/v3/sandboxa06c5a5cc75043e18ee5c7d44b40a7f7.mailgun.org/messages', {
+      formData.append('subject', `${dataT.firstname} ${dataT.lastname} trying to contact with you`);
+      const htmlMessage = `
+      <html>
+        <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
+          <div style="max-width: 600px; margin: auto; padding: 20px; border: 1px solid #ddd; border-radius: 5px;">
+            <h2 style="color: #007BFF;">New Contact Form Submission</h2>
+            <p style="font-size: 16px;"><strong>First Name:</strong> ${dataT.firstname}</p>
+            <p style="font-size: 16px;"><strong>Last Name:</strong> ${dataT.lastname}</p>
+            <p style="font-size: 16px;"><strong>Job Title:</strong> ${dataT.jobtitle}</p>
+            <p style="font-size: 16px;"><strong>Office Phone:</strong> ${dataT.officephone}</p>
+            <p style="font-size: 16px;"><strong>Mobile Phone:</strong> ${dataT.mobphone}</p>
+            <p style="font-size: 16px;"><strong>Company:</strong> ${dataT.company}</p>
+            <p style="font-size: 16px;"><strong>Country:</strong> ${dataT.country}</p>
+            <hr style="border: 1px solid #ddd;">
+            <h3 style="color: #007BFF;">Message</h3>
+            <p style="font-size: 16px;">${dataT.message}</p>
+            <footer style="margin-top: 20px; font-size: 12px; color: #aaa;">
+              <p>Thank you for your submission!</p>
+            </footer>
+          </div>
+        </body>
+      </html>
+    `;
+
+      formData.append('html', htmlMessage); // Use the constructed HTML
+      fetch('https://api.mailgun.net/v3/sandbox2c51e1200ed34e6c86d2a157f8176a99.mailgun.org/messages', {
         method: 'POST',
         headers: {
-          'Authorization': 'Basic ' + btoa('api:c54ea06e8ad99ab62ae00c157462734e-d010bdaf-3280b13a'), // Basic auth with API key
+          'Authorization': 'Basic ' + btoa('api:7b0a22cfb159b881056f7fc1f028d3cf-d010bdaf-e13010ec'), // Basic auth with API key
         },
         body: formData
       })
@@ -113,7 +136,7 @@ const Contact = () => {
     <section>
       <Row justify={"center"}>
         {contextHolder}
-        <Col md={10} className="contact-form">
+        <Col lg={14} md={14} sm={20} xs={20} className="contact-form">
           <Row className="contact-title" justify={"center"} align={"middle"}>
             How can we help you?
           </Row>
@@ -123,7 +146,7 @@ const Contact = () => {
           <Divider />
           <form onSubmit={handleSubmit(onSubmit)}>
             <Row gutter={[10, 10]} justify={"center"}>
-              <Col span={11}>
+              <Col md={11} sm={22} xs={22}>
                 <div style={{ display: "flex" }}>
                   <div style={iconStyle}>
                     <FaUser />
@@ -146,7 +169,7 @@ const Contact = () => {
                 <p className="error-msg">{errors.firstname?.message}</p>
               </Col>
 
-              <Col span={11}>
+              <Col md={11} sm={22} xs={22}>
                 <div style={{ display: "flex", alignItems: "center" }}>
                   <div style={iconStyle}>
                     <FaUser />
@@ -169,7 +192,7 @@ const Contact = () => {
                 <p className="error-msg">{errors.lastname?.message}</p>
               </Col>
 
-              <Col span={11}>
+              <Col md={11} sm={22} xs={22}>
                 <div style={{ display: "flex", alignItems: "center" }}>
                   <div style={iconStyle}>
                     <FaBriefcase />
@@ -192,7 +215,7 @@ const Contact = () => {
                 <p className="error-msg">{errors.jobtitle?.message}</p>
               </Col>
 
-              <Col span={11}>
+              <Col md={11} sm={22} xs={22}>
                 <div style={{ display: "flex", alignItems: "center" }}>
                   <div style={iconStyle}>
                     <FaPhone />
@@ -215,7 +238,7 @@ const Contact = () => {
                 <p className="error-msg">{errors.officephone?.message}</p>
               </Col>
 
-              <Col span={11}>
+              <Col md={11} sm={22} xs={22}>
                 <div style={{ display: "flex", alignItems: "center" }}>
                   <div style={iconStyle}>
                     <FaMobileAlt />
@@ -238,7 +261,7 @@ const Contact = () => {
                 <p className="error-msg">{errors.mobilephone?.message}</p>
               </Col>
 
-              <Col span={11}>
+              <Col md={11} sm={22} xs={22}>
                 <div style={{ display: "flex", alignItems: "center" }}>
                   <div style={iconStyle}>
                     <FaEnvelope />
@@ -261,7 +284,7 @@ const Contact = () => {
                 <p className="error-msg">{errors.email?.message}</p>
               </Col>
 
-              <Col span={11}>
+              <Col md={11} sm={22} xs={22}>
                 <div style={{ display: "flex", alignItems: "center" }}>
                   <div style={iconStyle}>
                     <FaBuilding />
@@ -284,7 +307,7 @@ const Contact = () => {
                 <p className="error-msg">{errors.company?.message}</p>
               </Col>
 
-              <Col span={11}>
+              <Col md={11} sm={22} xs={22}>
                 <div style={{ display: "flex", alignItems: "center" }}>
                   <div style={iconStyle}>
                     <FaGlobe />
@@ -300,7 +323,7 @@ const Contact = () => {
                 <p className="error-msg">{errors.country?.message}</p>
               </Col>
 
-              <Col span={22}>
+              <Col md={22} sm={22} xs={22}>
                 <div style={{ display: "flex", alignItems: "start" }}>
                   <div style={iconStyle}>
                     <FaComments />
