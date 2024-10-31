@@ -74,7 +74,7 @@ const Advantages = () => {
         {
             advantages.map((element,index)=>{
                 return (
-                    <Col md={11} key={index}>
+                    <Col md={11} sm={22} xs={22} key={index}>
                         <HorizontalCard
                             image={element.image}
                             desc={element.description}

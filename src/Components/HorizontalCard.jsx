@@ -1,5 +1,5 @@
 import React , {useState, useRef, useEffect} from 'react'
-import {Row,Col} from 'antd'
+import {Row,Col, Divider, Grid} from 'antd'
 import "../styles/Components/HorizontalCard.css"
 
 import { LikeOutlined, MessageOutlined, StarOutlined } from '@ant-design/icons';
@@ -9,6 +9,7 @@ const HorizontalCard = ({image, header, desc, reverse}) => {
     const [isFocused, setIsFocused] = useState(false);
     const [isVisible, setIsVisible] = useState(false);
     const cardRef = useRef(null);
+    const { md } = Grid.useBreakpoint();
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -64,7 +65,7 @@ const HorizontalCard = ({image, header, desc, reverse}) => {
                 {desc}
             </Row>
         </Col>
-        <Col md={6} lg={6} className='card-img' style={{borderLeft: "1px solid rgb(223, 223, 223)"}}>
+        <Col md={6} lg={6} xs={24} sm={24} className='card-img' style={{display: "flex", justifyContent: "center"}}>
             <img src={image} />
         </Col>
     </Row>

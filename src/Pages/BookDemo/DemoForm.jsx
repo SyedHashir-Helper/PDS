@@ -82,7 +82,7 @@ const DemoForm = () => {
         <form onSubmit={handleSubmit(onSubmit)}>
           <Row gutter={[10, 10]} justify={"center"}>
             <Col span={11}>
-              <div style={{ display: "flex" }}>
+              <div style={{ display: "flex", alignItems: "center" }}>
                 <div style={iconStyle}>
                   <FaUser />
                 </div>
@@ -97,7 +97,7 @@ const DemoForm = () => {
                   }}
                   control={control}
                   render={({ field }) => (
-                    <Input {...field} placeholder="First Name*" />
+                    <Input {...field} placeholder="First Name*" style={{lineHeight: "3rem", fontSize: "1.5rem"}}/>
                   )}
                 />
               </div>
@@ -120,7 +120,7 @@ const DemoForm = () => {
                   }}
                   control={control}
                   render={({ field }) => (
-                    <Input {...field} placeholder="Last Name*" />
+                    <Input {...field} placeholder="Last Name*" style={{lineHeight: "3rem", fontSize: "1.5rem"}}/>
                   )}
                 />
               </div>
@@ -143,7 +143,7 @@ const DemoForm = () => {
                   }}
                   control={control}
                   render={({ field }) => (
-                    <Input {...field} placeholder="Job Title*" />
+                    <Input {...field} placeholder="Job Title*" style={{lineHeight: "3rem", fontSize: "1.5rem"}}/>
                   )}
                 />
               </div>
@@ -166,7 +166,7 @@ const DemoForm = () => {
                   }}
                   control={control}
                   render={({ field }) => (
-                    <Input {...field} placeholder="Office Phone*" />
+                    <Input {...field} placeholder="Office Phone*" style={{lineHeight: "3rem", fontSize: "1.5rem"}}/>
                   )}
                 />
               </div>
@@ -189,7 +189,7 @@ const DemoForm = () => {
                   }}
                   control={control}
                   render={({ field }) => (
-                    <Input {...field} placeholder="Mobile Phone*" />
+                    <Input {...field} placeholder="Mobile Phone*" style={{lineHeight: "3rem", fontSize: "1.5rem"}}/>
                   )}
                 />
               </div>
@@ -212,7 +212,7 @@ const DemoForm = () => {
                   }}
                   control={control}
                   render={({ field }) => (
-                    <Input {...field} placeholder="Email*" />
+                    <Input {...field} placeholder="Email*" style={{lineHeight: "3rem", fontSize: "1.5rem"}}/>
                   )}
                 />
               </div>
@@ -235,7 +235,7 @@ const DemoForm = () => {
                   }}
                   control={control}
                   render={({ field }) => (
-                    <Input {...field} placeholder="Company*" />
+                    <Input {...field} placeholder="Company*" style={{lineHeight: "3rem", fontSize: "1.5rem"}}/>
                   )}
                 />
               </div>
@@ -251,7 +251,7 @@ const DemoForm = () => {
                   name="country"
                   control={control}
                   render={({ field }) => (
-                    <Input {...field} placeholder="Country" />
+                    <Input {...field} value={'USA'} disabled style={{lineHeight: "3rem", fontSize: "1.5rem"}}/>
                   )}
                 />
               </div>

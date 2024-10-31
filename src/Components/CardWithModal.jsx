@@ -1,4 +1,4 @@
-import React, { useState,useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Row, Col, Card, Modal, Timeline } from "antd";
 const { Meta } = Card;
 
@@ -45,14 +45,14 @@ const CardWithModal = ({ element }) => {
         ref={cardRef}
         hoverable
         style={{
-          width: 330,
-          transition: 'transform 1.5s ease, opacity 0.5s ease',
-        transform: isVisible ? 'translateY(0)' : 'translateY(60px)',
-        opacity: isVisible ? 1 : 0,
+          width: '300px',
+          transition: "transform 1.5s ease, opacity 0.5s ease",
+          transform: isVisible ? "translateY(0)" : "translateY(60px)",
+          opacity: isVisible ? 1 : 0,
         }}
         cover={<img alt="example" src={element.image} />}
       >
-        <Meta title={element.name} description={element.position} />
+        <Meta title={element.name} description={<div style={{height: "5rem"}}>{element.position}</div>} />
         <a
           onClick={showModal}
           style={{
@@ -80,25 +80,46 @@ const CardWithModal = ({ element }) => {
                 width: "100%",
                 height: "100%",
                 objectFit: "contain",
-                borderTopRightRadius: "20px"
+                borderTopRightRadius: "20px",
               }}
             />
           </Col>
           <Col md={17} className="">
-          <div style={{ padding: "0px 20px", borderRadius: "8px", }}>
-  {element.details.map((item) => (
-    <div key={item.label} style={{ marginBottom: "20px", padding: "10px", backgroundColor: "#ffffff", borderRadius: "8px", boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)" }}>
-      <div style={{ fontWeight: "bold", fontSize: "1.5rem", color: "#333", marginBottom: "8px" }}>
-        {item.label}
-      </div>
-      <div style={{ textAlign: "justify", marginLeft: "15px", color: "#555" }}>
-        {item.children}
-      </div>
-    </div>
-  ))}
-</div>
-
-            </Col>
+            <div style={{ padding: "0px 20px", borderRadius: "8px" }}>
+              {element.details.map((item) => (
+                <div
+                  key={item.label}
+                  style={{
+                    marginBottom: "20px",
+                    padding: "10px",
+                    backgroundColor: "#ffffff",
+                    borderRadius: "8px",
+                    boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
+                  }}
+                >
+                  <div
+                    style={{
+                      fontWeight: "bold",
+                      fontSize: "1.5rem",
+                      color: "#333",
+                      marginBottom: "8px",
+                    }}
+                  >
+                    {item.label}
+                  </div>
+                  <div
+                    style={{
+                      textAlign: "justify",
+                      marginLeft: "15px",
+                      color: "#555",
+                    }}
+                  >
+                    {item.children}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </Col>
         </Row>
       </Modal>
     </>

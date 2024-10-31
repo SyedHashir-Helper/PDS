@@ -3,10 +3,8 @@
 }
 
 .footer {
-    background: var(--main-bg-3);
     color: white;
-    padding: 2rem 3rem; /* Adjust padding as needed */
-    margin-top: 5rem;
+    padding: 0rem 3rem; /* Adjust padding as needed */
 }
 
 .footer-column {
@@ -16,32 +14,70 @@
     align-items: left;
 }
 
-.footer-column h2 {
-    margin-bottom: 0.5rem;
-    font-size: 2.5rem; /* Adjust as needed */
-}
+.footer-row {
+    display: flex;            /* Use flexbox for layout */
+    justify-content: center; /* Align items to the start */
+    gap: 2rem;   
+    width: 100%;            /* Space between items */
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 1024px) {
+    .footer-row {
+      gap: 1.5rem;           /* Reduce gap for medium screens */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .footer-row {
+      flex-direction: column; /* Stack items vertically on small screens */
+      align-items: left; 
+      gap: 0rem;   /* Center items horizontally */            /* Further reduce gap between items */
+    }
+  }
 
-.footer-column p {
-    margin-bottom: 1rem;
+.bg-foot{
+    background: var(--main-bg-3);
 }
+.footer-logo {
+    height: 6rem;           /* Default height for larger screens */
+    width: 6rem;            /* Default width for larger screens */
+    margin-left: 4rem;      /* Default left margin */
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 1024px) {
+    .footer-logo {
+      height: 5rem;         /* Slightly smaller for medium screens */
+      width: 5rem;
+      margin-left: 3rem;    /* Reduce margin */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .footer-logo {
+      height: 4rem;         /* Smaller height for small screens */
+      width: 4rem;          /* Smaller width for small screens */
+      margin-left: 2rem;    /* Further reduce margin */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .footer-logo {
+      height: 3rem;         /* Minimal size for extra small screens */
+      width: 3rem;          /* Minimal size for extra small screens */
+      margin-left: 1rem;    /* Minimal margin for very small screens */
+    }
+  }
 
-.footer-column ul {
-    list-style: none;
-    padding: 0;
-}
 
-.footer-column ul li {
-    margin: 1.5rem 0;
-}
-
-.socials li a {
-    color: white; /* Link color */
-    text-decoration: none; /* No underline */
-    display: flex; /* Flexbox for icons */
-    align-items: center; /* Center icons vertically */
-}
-
-.socials li a svg {
-    margin-right: 0.5rem; /* Space between icon and text */
-    font-size: 1.8rem; /* Icon size */
-}
+  .hover-text {
+    display: inline-block;          /* Allows for padding and margin */
+    transition: letter-spacing 0.3s ease; /* Smooth transition for letter spacing */
+    letter-spacing: normal;        /* Default letter spacing */
+  }
+  
+  /* Increase letter spacing on hover */
+  .hover-text:hover {
+    letter-spacing: 0.1em;         /* Increase letter spacing on hover */
+  }

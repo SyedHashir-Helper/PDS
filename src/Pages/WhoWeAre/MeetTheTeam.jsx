@@ -126,11 +126,12 @@ const MeetTheTeam = () => {
                 <h1 className='section-title' style={{textAlign:"center"}}>Meet the team</h1>
             </Col>
         </Row>
-        <Row gutter={[0,50]} justify={'left'}>
+        
+        <Row align={'top'} justify={{ xs: 'center', sm: 'space-between' }} gutter={[10,30]}>
             {
                 people.map((element, index)=>{
                     return (
-                        <Col md={8} key={index} style={{
+                        <Col lg={4} md={24} sm={24} xs={24} key={index} style={{
                             display: "flex",
                             alignItems: "center",
                             justifyContent: "center",

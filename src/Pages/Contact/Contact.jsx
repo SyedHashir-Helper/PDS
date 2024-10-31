@@ -61,6 +61,7 @@ const Contact = () => {
     padding: "8px", // Padding around the icon
     display: "flex", // Flexbox for centering
     marginRight: "8px", // Space between the icon and input
+    alignItems: "center",
   };
 
   const error = (errmsg) => {
@@ -141,13 +142,13 @@ const Contact = () => {
             How can we help you?
           </Row>
           <Row className="contact-title" justify={"center"} align={"middle"}>
-            <span>Please contact us online or by phone - 757-373-5050</span>
+            <span style={{textAlign: "center"}}>Please contact us online or by phone - 757-373-5050</span>
           </Row>
           <Divider />
           <form onSubmit={handleSubmit(onSubmit)}>
             <Row gutter={[10, 10]} justify={"center"}>
               <Col md={11} sm={22} xs={22}>
-                <div style={{ display: "flex" }}>
+                <div style={{ display: "flex", alignItems: "center" }}>
                   <div style={iconStyle}>
                     <FaUser />
                   </div>
@@ -162,7 +163,7 @@ const Contact = () => {
                     }}
                     control={control}
                     render={({ field }) => (
-                      <Input {...field} placeholder="First Name*" />
+                      <Input style={{lineHeight: "3rem", fontSize: "1.5rem"}} {...field} placeholder="First Name*" />
                     )}
                   />
                 </div>
@@ -185,7 +186,7 @@ const Contact = () => {
                     }}
                     control={control}
                     render={({ field }) => (
-                      <Input {...field} placeholder="Last Name*" />
+                      <Input {...field} style={{lineHeight: "3rem", fontSize: "1.5rem"}} placeholder="Last Name*" />
                     )}
                   />
                 </div>
@@ -208,7 +209,7 @@ const Contact = () => {
                     }}
                     control={control}
                     render={({ field }) => (
-                      <Input {...field} placeholder="Job Title*" />
+                      <Input {...field} style={{lineHeight: "3rem", fontSize: "1.5rem"}} placeholder="Job Title*" />
                     )}
                   />
                 </div>
@@ -231,7 +232,7 @@ const Contact = () => {
                     }}
                     control={control}
                     render={({ field }) => (
-                      <Input {...field} placeholder="Office Phone*" />
+                      <Input {...field} style={{lineHeight: "3rem", fontSize: "1.5rem"}} placeholder="Office Phone*" />
                     )}
                   />
                 </div>
@@ -254,7 +255,7 @@ const Contact = () => {
                     }}
                     control={control}
                     render={({ field }) => (
-                      <Input {...field} placeholder="Mobile Phone*" />
+                      <Input {...field} style={{lineHeight: "3rem", fontSize: "1.5rem"}} placeholder="Mobile Phone*" />
                     )}
                   />
                 </div>
@@ -277,7 +278,7 @@ const Contact = () => {
                     }}
                     control={control}
                     render={({ field }) => (
-                      <Input {...field} placeholder="Email*" />
+                      <Input {...field} style={{lineHeight: "3rem", fontSize: "1.5rem"}} placeholder="Email*" />
                     )}
                   />
                 </div>
@@ -300,7 +301,7 @@ const Contact = () => {
                     }}
                     control={control}
                     render={({ field }) => (
-                      <Input {...field} placeholder="Company*" />
+                      <Input {...field} style={{lineHeight: "3rem", fontSize: "1.5rem"}} placeholder="Company*" />
                     )}
                   />
                 </div>
@@ -316,7 +317,7 @@ const Contact = () => {
                     name="country"
                     control={control}
                     render={({ field }) => (
-                      <Input {...field} placeholder="Country" />
+                      <Input {...field}  value={'USA'} disabled style={{lineHeight: "3rem", fontSize: "1.5rem"}} />
                     )}
                   />
                 </div>
@@ -344,7 +345,7 @@ const Contact = () => {
                         showCount
                         maxLength={100}
                         placeholder="Your Message*"
-                        style={{ height: 120, resize: "none" }}
+                        style={{ height: 120, resize: "none", fontSize: "1.5rem" }}
                       />
                     )}
                   />

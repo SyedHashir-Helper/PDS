@@ -3,23 +3,18 @@ import {Row,Col} from 'antd'
 import demo from "../../assets/images/demo.png"
 import { CheckOutlined } from '@ant-design/icons';
 import { FaCheck } from 'react-icons/fa';
+import check from "../../assets/check.png";
 import { BiCalendarCheck } from 'react-icons/bi';
 
 const Hero_Demo = () => {
   return (
     <Row
-    style={{
-      height: "70vh",
-      background: "linear-gradient(135deg, #f5fbfe, #e3f2f9)",
-      padding: "2rem",
-      paddingLeft: "3rem"
-
-    }}
+    className='hero--section'
 
   >
     <Col md={14} lg={14} className="hero-wwr-text">
       <Row>
-        <Col md={24}>
+        <Col md={24} xs={24} sm={24}>
           <h1 className="wwr-main-text">
             Request Your
             <span className="wwr-main-text-blue">Demo Today</span>
@@ -34,23 +29,23 @@ const Hero_Demo = () => {
           <Col md={24} className="service-list">
             <ul>
               <li>
-                <FaCheck className="check-icon" />
+                <img src={check} alt="Check Icon" className="check-image" />
                 <span>
                   Pre-loaded data or upload your own
                 </span>
               </li>
               <li>
-                <FaCheck className="check-icon" />
+                <img src={check} alt="Check Icon" className="check-image" />
                 <span>
                   Preconfigured process and reports
                 </span>
               </li>
               <li>
-                <FaCheck className="check-icon" />
+                <img src={check} alt="Check Icon" className="check-image" />
                 <span>Guided Content, how tos and best practices for medical credentiality</span>
               </li>
               <li>
-                <FaCheck className="check-icon" />
+                <img src={check} alt="Check Icon" className="check-image" />
                 <span>
                   Online training and live onboarding seminars
                 </span>

@@ -1,9 +1,36 @@
 .main-text{
     font-size: 3rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Responsive adjustments for main-text */
+@media (max-width: 1024px) {
+  .main-text {
+      font-size: 2.5rem;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .main-text {
+      font-size: 2.3rem;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-text {
+      font-size: 1.7rem;
+      text-align: center;
+  }
 }
 .hero-img{
+    padding: 2rem 0rem;
     height: 100%;
-    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -15,8 +42,27 @@
     object-fit: contain;
 }
 
-.second-text{
-    font-size: 1.2em;
+.second-text {
+  font-size: 1.6em;
+}
+
+/* Responsive adjustments for second-text */
+@media (max-width: 1024px) {
+  .second-text {
+      font-size: 1.1em;
+  }
+}
+
+@media (max-width: 768px) {
+  .second-text {
+      font-size: 1em;
+  }
+}
+
+@media (max-width: 480px) {
+  .second-text {
+      font-size: 0.9em;
+  }
 }
 
 .main-text-blue{
@@ -32,6 +78,26 @@
     max-width: fit-content; /* Ensures the container only grows to fit the content */
 }
 
+/* Responsive adjustments for main-text-blue */
+@media (max-width: 1024px) {
+  .main-text-blue {
+      font-size: 1.4em;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-text-blue {
+      font-size: 1.2em;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-text-blue {
+      font-size: 1em;
+      text-align: center;
+  }
+}
+
 @keyframes typing {
     from { width: 0 }
     to { width: 100% }
@@ -44,26 +110,166 @@
   }
 
 
-.service-list {
+  .service-list {
     padding: 20px;
   }
   
-.service-list  ul {
+  .service-list ul {
     list-style-type: none; /* Remove default bullets */
     padding: 0;
   }
   
-.service-list  ul  li {
+  .service-list ul li {
     display: flex;
     align-items: center;
-    margin-bottom: 10px;
-  }
-  
-  .check-icon {
-    color: #1879ad; /* Main color */
-    margin-right: 8px;
-    font-size: 18px;
+    margin-bottom: 1.5rem;
+    font-size: 2rem
   }
 
-.hero-button:hover{
+  .check-image {
+    width: 25px; /* Adjust width as needed */
+    height: 25px; /* Adjust height as needed */
+    margin-right: 8px; /* Space between image and text */
   }
+
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    /* For tablets and smaller devices */
+    .service-list {
+      padding: 15px; /* Reduce padding on smaller screens */
+    }
+  
+    .service-list ul li {
+      font-size: 1.5rem; /* Decrease font size for smaller screens */
+      margin-bottom: 1rem; /* Reduce margin between items */
+
+      
+    }
+  }
+  
+  @media (max-width: 576px) {
+    /* For mobile devices */
+    .service-list {
+      padding: 10px; /* Further reduce padding on mobile */
+    }
+  
+    .service-list ul li {
+      font-size: 1.2rem; /* Smaller font size for mobile */
+      margin-bottom: 0.8rem; /* Reduce margin for better spacing on mobile */
+    }
+  
+  }
+
+
+  .hero--section {
+    padding: 2rem 7rem; /* Default padding for large screens */
+    background-color: rgb(246 250 255)
+  }
+  
+  /* For tablets and smaller screens */
+  @media (max-width: 1024px) {
+    .hero--section {
+      padding: 2rem 4rem; /* Reduce padding on medium-sized screens */
+    }
+  }
+  
+  /* For small screens (mobile devices) */
+  @media (max-width: 768px) {
+    .hero--section {
+      padding: 1.5rem 2rem; /* Further reduce padding on smaller screens */
+    }
+  }
+  
+  /* For extra small screens (e.g., small mobile devices) */
+  @media (max-width: 480px) {
+    .hero--section {
+      padding: 1rem 1rem; /* Minimal padding on the smallest screens */
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .check-image {
+      width: 20px;  /* Slightly smaller for medium screens */
+      height: 20px;
+    }
+  }
+  
+  /* For mobile devices */
+  @media (max-width: 768px) {
+    .check-image {
+      width: 18px;  /* Smaller for mobile screens */
+      height: 18px;
+    }
+  }
+  
+  /* For extra small devices (e.g., small mobile screens) */
+  @media (max-width: 480px) {
+    .check-image {
+      width: 16px;  /* Minimal size for the smallest screens */
+      height: 16px;
+    }
+  }
+
+
+
+/* CSS */
+.button-89 {
+  --b: 3px;   /* border thickness */
+  --s: .45em; /* size of the corner */
+  --color: #1879ad;
+  
+  padding: calc(1.0em + var(--s)) calc(.9em + var(--s));
+  color: black;
+  --_p: var(--s);
+  background:
+    conic-gradient(from 90deg at var(--b) var(--b),#0000 90deg,var(--color) 0)
+    var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
+  transition: .3s linear, color 0s, background-color 0s;
+  outline: var(--b) solid #0000;
+  outline-offset: .6em;
+  font-size: 16px;
+
+  border: 0;
+
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  cursor: pointer;
+}
+
+.button-89:hover,
+.button-89:focus-visible{
+  --_p: 0px;
+  outline-color: var(--color);
+  outline-offset: .05em;
+}
+
+.button-89:active {
+  background: var(--color);
+  color: #fff;
+}
+
+.hero-image-parent{
+  width: 100%;
+}
+.hero-image-parent{
+  /* Default styles for larger devices */
+  display: flex;            /* Use flexbox for layout */
+  align-items: flex-start;  /* Align items at the start by default */
+  justify-content: flex-start; /* Align items to the start */
+}
+
+@media (max-width: 768px) {
+  .hero-image-parent{
+    margin: 2rem 0rem;
+    display: flex;                   /* Keep flexbox for layout */
+    flex-direction: column;          /* Stack items vertically */
+    align-items: center;             /* Center items horizontally */
+    justify-content: center;         /* Center items vertically */
+    text-align: center;              /* Center text */
+  }
+}

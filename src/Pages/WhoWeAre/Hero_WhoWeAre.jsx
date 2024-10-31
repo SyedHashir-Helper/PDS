@@ -9,18 +9,11 @@ import { BiCalendarCheck } from 'react-icons/bi';
 const Hero_WhoWeAre = () => {
   return (
     <Row
-    style={{
-      height: "50vh",
-      background: "linear-gradient(135deg, #f5fbfe, #e3f2f9)",
-      padding: "2rem",
-      paddingLeft: "3rem"
-
-    }}
-
+      className='hero--section'
   >
     <Col md={14} lg={14} className="hero-wwr-text">
       <Row>
-        <Col md={24}>
+        <Col md={24} xs={24} sm={24}>
           <h1 className="wwr-main-text">
             Who
             <span className="wwr-main-text-blue">we are?</span>

@@ -85,10 +85,15 @@ const ClientList = () => {
   return (
     <Row justify={"center"}>
       <List
-        style={{ width: "99%" }}
+        style={{ width: "95%" }}
         grid={{
           gutter: 16,
-          column: 4,
+          xs: 2, // 2 columns for extra small screens
+          sm: 2, // 2 columns for small screens
+          md: 4, // 4 columns for medium screens
+          lg: 4,
+          xl: 4,
+      xxl: 4,
         }}
         dataSource={data}
         renderItem={(item) => (
