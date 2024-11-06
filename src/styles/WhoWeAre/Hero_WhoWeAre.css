@@ -49,13 +49,13 @@
 
 @media (max-width: 1024px) {
   .wwr-second-text {
-      font-size: 1.1em;
+      font-size: 1.3em;
   }
 }
 
 @media (max-width: 768px) {
   .wwr-second-text {
-      font-size: 1em;
+      font-size: 1.4em;
   }
 }
 

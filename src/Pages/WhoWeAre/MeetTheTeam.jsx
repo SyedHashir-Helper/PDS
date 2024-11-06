@@ -1,7 +1,9 @@
 import React from 'react'
 import {Row, Col, Card} from 'antd'
 const { Meta } = Card;
-import Picture1 from  "../../assets/images/Picture1.png"
+// import Picture1 from  "../../assets/images/Picture1.png"
+import Picture1 from  "../../assets/images/white.png"
+import khalil from  "../../assets/images/khalil.png"
 import CardWithModal from '../../Components/CardWithModal';
 
 const MeetTheTeam = () => {
@@ -30,15 +32,11 @@ const MeetTheTeam = () => {
             "position": "Provider Data Solutions Executive Credentialing Specialist",
             "details": [
                 {
-                    "label": "Pre-Americaid",
-                    "children": "Judy, add your pre-Americaid job?"
-                },
-                {
                     "label": "199X to 200X",
                     "children": "Judy was Director of Credentialing for Amerigroup. Judy managed the credentialing of more than 100,000 providers across the nation. Judy – add something about NCQA here."
                 },
                 {
-                    "label": "200X to 20XX",
+                    "label": "200X to Present",
                     "children": "Executive Credentialing Specialist: Judy performs delegated credentialing audits for large provider IPAs and groups and is our credentialing subject matter expert."
                 }
             ],
@@ -68,16 +66,12 @@ const MeetTheTeam = () => {
             "position": "Senior Credentialing Specialist and NCQA Certification Subject Matter Expert",
             "details": [
                 {
-                    "label": "2008 – 2023",
-                    "children": "Director of Provider Support Services of Ballad Health. Laraine, is it OK to include this here?"
+                    "label": "",
+                    "children": "More than 15 years of work in Credentialing/Privileging/Enrollment for healthcare providers and healthcare facilities. "
                 },
                 {
-                    "label": "2023 – Present",
-                    "children": "Director of Payor Relations."
-                },
-                {
-                    "label": "2020 – Present",
-                    "children": "Senior Credentialing Specialist and our NCQA Certification subject matter expert. Laraine, what year did you start with us? Please edit your brief job summary above so it is accurate, and marketing focused."
+                    "label": "",
+                    "children": "NCQA subject matter expert with over a decade in administering successful surveys and developing policies and procedures. "
                 }
             ],
             "image": Picture1
@@ -107,7 +101,7 @@ const MeetTheTeam = () => {
                     "children": "Executive Technology Advisor for Planet Group. Khalil and his team built, improve, and maintain the PDS technology and developed several healthcare platforms."
                 }
             ],
-            "image": Picture1
+            "image": khalil
         }
     ];
     
@@ -123,7 +117,7 @@ const MeetTheTeam = () => {
     }}>
         <Row  >
             <Col span={24}>
-                <h1 className='section-title' style={{textAlign:"center"}}>Meet the team</h1>
+                <h1 className='section-title' style={{textAlign:"center"}}>Meet the Management team</h1>
             </Col>
         </Row>
         

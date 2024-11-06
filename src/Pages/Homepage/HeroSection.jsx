@@ -2,7 +2,7 @@ import React from "react";
 import { Row, Col, Button } from "antd";
 import "../../styles/Homepage/Hero.css";
 // import hero from "../../assets/PDS-ai.png";
-import hero from "../../assets/images/Webpage 2.png";
+import hero from "../../assets/images/Webpage 3 final.png";
 import check from "../../assets/check.png";
 // import hero from "../../assets/images/hero.png";
 import { CheckOutlined } from '@ant-design/icons';

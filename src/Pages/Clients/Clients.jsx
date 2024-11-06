@@ -10,11 +10,6 @@ const Clients = () => {
     <section>
         <Navbar/>
         <Hero_Clients/>
-        <Row >
-            <Col span={24}>
-                <h1 className='section-title' style={{textAlign:"center"}}>We have served a large group of community</h1>
-            </Col>
-        </Row>
         <ClientList/>
         <Footer/>
     </section>

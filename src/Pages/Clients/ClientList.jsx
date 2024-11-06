@@ -107,15 +107,15 @@ const ClientList = () => {
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "center",
-                position: 'relative',
+                alignItems: "center",
             }}
             >
               <img
                 width={300}
                 style={{
-                  height: "100%",
-                  width: "100%",
-                  objectFit: "cover",
+                  height: "90%",
+                  width: "90%",
+                  objectFit: "contain",
                   transition: 'transform 0.3s ease',
                 }}
                 src={item.image}
