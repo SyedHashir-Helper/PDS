@@ -5,14 +5,14 @@ import ForvisMazars from "../../assets/images/clients/ForvisMazars.png";
 import OlofssonGroup from "../../assets/images/clients/Olofsson-Group.png";
 import UniversalAmerican from "../../assets/images/clients/UAM_Wellcare_logo.png";
 import Sentara from "../../assets/images/clients/sentara.png";
-import TexasTrueChoice from "../../assets/images/clients/ttc.png";
+import TexasTrueChoice from "../../assets/images/clients/logo.jpg";
 import ChooseWellCommunities from "../../assets/images/clients/choosewell+-+full+color+web.png";
 import KaiserPermanente from "../../assets/images/clients/kaiser-permanente-logo-png-transparent.png";
 import LongevityHealthPlan from "../../assets/images/clients/63c7fe1f7c4ed17f03366b86_Longevity.png";
 import MolinaHealthCare from "../../assets/images/clients/molina.png";
-import EVRYHealth from "../../assets/images/clients/104684.png";
-import PACEHealthcare from "../../assets/images/clients/Logo-blue.png";
-import TheViabilityCompany from "../../assets/images/clients/60225ViabilityCompany_600x600.png";
+import EVRYHealth from "../../assets/images/clients/evry.jpg";
+import PACEHealthcare from "../../assets/images/clients/pace.png";
+import TheViabilityCompany from "../../assets/images/clients/viability.jpg";
 import {Link} from 'react-router-dom'
 
 const { Meta } = Card;
